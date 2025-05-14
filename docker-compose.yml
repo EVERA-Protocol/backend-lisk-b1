@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '3020:3020'
+    command: npm run start:dev
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    networks:
+      - backend-network
+
+  redis:
+    image: redis:alpine
+    ports:
+      - '6336:6379'
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
