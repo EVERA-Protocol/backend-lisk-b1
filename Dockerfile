@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM node:18-alpine AS development
+FROM node:20-buster AS development
 
 WORKDIR /usr/src/app
 
@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:18-alpine AS production
+FROM node:20-buster AS production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
