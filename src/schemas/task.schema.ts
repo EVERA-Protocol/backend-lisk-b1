@@ -16,7 +16,7 @@ export class Task {
 
   @ApiProperty({ description: 'Deadline in N days' })
   @Prop({ required: true })
-  deadline: string;
+  deadline: number;
 
   @ApiProperty({ description: 'Array of tags for the task' })
   @Prop({ type: [String], default: [] })

@@ -18,7 +18,7 @@ interface JwtUser {
 class CreateTaskDto {
   title: string;
   description: string;
-  deadline: string;
+  deadline: number;
   tags: string[];
 }
 
