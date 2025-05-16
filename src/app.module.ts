@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { TaskModule } from './task/task.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { AuthModule } from './auth/auth.module';
       process.env.MONGODB_URI || 'mongodb://localhost:27017/hackathon',
     ),
     AuthModule,
+    TaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
