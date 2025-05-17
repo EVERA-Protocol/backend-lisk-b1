@@ -139,20 +139,11 @@ export class BlockchainService {
           const process = async () => {
             try {
               // Find user task by taskHash
-              console.log(`taskId: ${taskId}`);
-              console.log(
-                'type of taskId: ',
-                typeof taskId,
-                taskId.toString(),
-                parseInt(taskId.toString()),
-              );
 
               const userTask = await this.userTaskModel.findOne({
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 avsTaskId: taskId.toString().trim(),
               });
-
-              console.log(`userTask: ${userTask}`);
 
               if (!userTask) {
                 console.log(
@@ -218,7 +209,8 @@ export class BlockchainService {
 
               // Find user task by taskHash
               const userTask = await this.userTaskModel.findOne({
-                avsTaskHash: taskHash,
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+                avsTaskId: taskId.toString().trim(),
               });
 
               if (!userTask) {
