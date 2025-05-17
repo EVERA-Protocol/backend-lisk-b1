@@ -6,9 +6,9 @@ import {
   UserTask,
   UserTaskDocument,
   UserTaskStatus,
-} from 'src/schemas/user-task.schema';
-import { Task, TaskDocument } from 'src/schemas/task.schema';
-import { User, UserDocument } from 'src/schemas/user.schema';
+} from '../schemas/user-task.schema';
+import { Task, TaskDocument } from '../schemas/task.schema';
+import { User, UserDocument } from '../schemas/user.schema';
 import { Model } from 'mongoose';
 
 @Injectable()

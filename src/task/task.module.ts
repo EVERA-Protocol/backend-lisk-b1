@@ -5,10 +5,14 @@ import { TaskController } from './task.controller';
 import { TaskService } from './task.service';
 import { TaskSeeder } from './task.seeder';
 import { UserTaskModule } from '../user-task/user-task.module';
+import { UserTask, UserTaskSchema } from '../schemas/user-task.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Task.name, schema: TaskSchema }]),
+    MongooseModule.forFeature([
+      { name: Task.name, schema: TaskSchema },
+      { name: UserTask.name, schema: UserTaskSchema },
+    ]),
     UserTaskModule,
   ],
   controllers: [TaskController],
