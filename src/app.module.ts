@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { TaskModule } from './task/task.module';
+import { BlockchainModule } from './blockchain/blockchain.module';
+import { UserTaskModule } from './user-task/user-task.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { TaskModule } from './task/task.module';
     ),
     AuthModule,
     TaskModule,
+    BlockchainModule,
+    UserTaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
